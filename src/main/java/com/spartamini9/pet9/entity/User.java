@@ -27,7 +27,7 @@ public class User {
     private String password;
 
     @Column(nullable = false, unique = true)
-    private String nickname;
+    private String username;
 //
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "BOARD_ID")
@@ -38,10 +38,10 @@ public class User {
 //    private List<Comment> comments;
 
 
-    public User(String email,String password,String nickname){
+    public User(String email,String password,String username){
         this.email=email;
         this.password=password;
-        this.nickname=nickname;
+        this.username=username;
     }
 }
 

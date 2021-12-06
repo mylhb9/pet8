@@ -1,8 +1,9 @@
 package com.spartamini9.pet9.config;
 
 
-import com.example.board1.domain.User;
-import com.example.board1.repository.UserRepository;
+
+import com.spartamini9.pet9.entity.User;
+import com.spartamini9.pet9.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

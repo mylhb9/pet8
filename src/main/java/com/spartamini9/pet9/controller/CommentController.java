@@ -5,6 +5,7 @@ import com.spartamini9.pet9.config.UserDetailsImpl;
 import com.spartamini9.pet9.dto.CommentDto;
 import com.spartamini9.pet9.service.CommentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,7 +17,8 @@ public class CommentController {
     //댓글 저장
     @PostMapping("/posting/{id}/comment")
     public void registComment(@PathVariable Long id, @RequestBody CommentDto commentDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        Long userId = userDetails.getUser().getId();
+//        Long userId = userDetails.getUser().getId();
+        Long userId = 1L;
         commentService.saveComment(id, userId, commentDto);
     }
 

@@ -1,6 +1,8 @@
 package com.spartamini9.pet9.entity;
 
 
+
+import com.spartamini9.pet9.dto.BoardRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
@@ -19,13 +21,13 @@ public class Board extends Timestamped{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false)
-    private String nickname;
+    @Column
+    private String username;
 
-    @Column(nullable = false)
+    @Column
     private String title;
 
-    @Column(nullable = false)
+    @Column
     private String content;
 
     @Column
@@ -36,13 +38,16 @@ public class Board extends Timestamped{
 
     @CreatedDate
     @Column(updatable = false)
-    private LocalDateTime createdDate;
+    private LocalDateTime createdAt;
 
     @LastModifiedDate
-    private LocalDateTime modifiedDate;
+    private LocalDateTime modifiedAt;
 
-
-
-
-
+    public Board(BoardRequestDto boardRequestDto) {
+        this.username = boardRequestDto.getUsername();
+        this.title = boardRequestDto.getTitle();
+        this.content = boardRequestDto.getContent();
+        this.img = boardRequestDto.getImg();
+        this.category = boardRequestDto.getCategory();
+    }
 }

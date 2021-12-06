@@ -21,29 +21,29 @@ public class Comment extends Timestamped{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false)
-    private String nickname;
+    @Column
+    private String username;
 
-    @Column(nullable = false)
+    @Column
     private String commentcontent;
 
-    @Column(nullable = false)
+    @Column
     private Long boardId;
 
-    @Column(nullable = false)
+    @Column
     private Long userId;
 
 
     @CreatedDate
     @Column(updatable = false)
-    private LocalDateTime createdDate;
+    private LocalDateTime createdAt;
 
     @LastModifiedDate
-    private LocalDateTime modifiedDate;
+    private LocalDateTime modifiedAt;
 
     @Builder
-    public Comment(String nickname, String commentcontent, Long boardId, Long userId) {
-        this.nickname = nickname;
+    public Comment(String username, String commentcontent, Long boardId, Long userId) {
+        this.username = username;
         this.commentcontent = commentcontent;
         this.boardId = boardId;
         this.userId = userId;

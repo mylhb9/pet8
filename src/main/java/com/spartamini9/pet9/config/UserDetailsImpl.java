@@ -1,7 +1,7 @@
 package com.spartamini9.pet9.config;
 
 
-import com.example.board1.domain.User;
+
 import com.spartamini9.pet9.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
